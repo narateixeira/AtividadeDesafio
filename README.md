@@ -222,16 +222,17 @@ public class Integra {
 		
 				
 				
-//	termina aqui	
+//		
 	}
 
 }
 
+/////////////////////////termina aqui a integração desde cadastros até relatório de vendas.
 
-////MENU PABLO import java.util.Scanner; public class TrabalhoATP {
 
-public static void main(String[] args) {
-    // TODO Auto-generated method stub
+//MENU PABLO import java.util.Scanner; public class TrabalhoATP {
+
+public static void main(String[] args) { // TODO Auto-generated method stub 
 
     // Carolina Mascarenhas - cadastro de Produtos
 
@@ -256,9 +257,10 @@ public static void main(String[] args) {
             //lista de opções
             System.out.println("1 - CADASTRAR PESSOAS");
             System.out.println("2 - CADASTRAR PRODUTOS");
-            System.out.println("3 - EMITIR RELATÓRIO DE PESSOAS CADASTRADAS");
-            System.out.println("4 - EMITIR RELATÓRIOS DE PRODUTOS CADASTRADOS");
+            System.out.println("3 - LISTAGEM DE PESSOAS CADASTRADAS");
+            System.out.println("4 - LISTAGEM DE PRODUTOS CADASTRADOS");
             System.out.println("5 - REALIZAR UMA VENDA");
+            System.out.println("6 - RELATÓRIO DE VENDAS");
 
 
             opcaoMenu=leia.nextInt();
@@ -362,6 +364,10 @@ public static void main(String[] args) {
                 // colocar aqui o código de fazer vendas
                 break;
 
+            case 6:
+                // colocar aqui o código de fazer vendas
+                break;
+
 
 
             } // fim do switch case
@@ -375,4 +381,8 @@ public static void main(String[] args) {
             System.out.println("Deseja realizar outra operação? S - SIM      N-NÃO");
             conf=leia.next().charAt(0);
         }// fim do while
+
+}
+}
+
 
