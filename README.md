@@ -131,7 +131,7 @@ public class Integra {
 		System.out.println();
 
 		do { encontrou=false; textoMais=null; System.out.println();
-		System.out.print ("Digite o Nome do produto a vender ('FIM' para encerrar): "); texto = leia.next(); if(texto.equalsIgnoreCase("FIM")) { System.out.println("Encerrado com sucesso"); break; }
+		System.out.print ("Digite o Nome do produto a vender ('FIM' para encerrar): "); texto = leia.next(); 					if(texto.equalsIgnoreCase("FIM")) { System.out.println("Encerrado com sucesso"); break; }
 
 		System.out.print ("Informe a quantidade desejada: ");
 		quantidade=leia.nextInt();
@@ -218,14 +218,23 @@ public class Integra {
 		
 //alessandro
 		
-		
-		
-				
-				
-//		
+        System.out.print ("Relatorio geral de Vendas: ");
+
+
+	System.out.println();
+	System.out.println ("Produtos     Quantidade    Valor_Produto");
+
+	for (n=0; n < produtosVendidos.length; n++) {
+	System.out.println (produtosVendidos [n][0] + 
+        "            " + produtosVendidos [n][2] + "             "
+        + produtosVendidos [n][1]);
+	}
+	System.out.println();
+	System.out.print("Total vendas:  ");
+	System.out.println(totalValorVendas);		
 	}
 
-}
+	}
 
 /////////////////////////termina aqui a integração desde cadastros até relatório de vendas.
 
@@ -382,7 +391,7 @@ public static void main(String[] args) { // TODO Auto-generated method stub
             conf=leia.next().charAt(0);
         }// fim do while
 
-}
-}
+	}
+	}
 
 
