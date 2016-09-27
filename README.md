@@ -224,7 +224,7 @@ public class Integra {
 	System.out.println();
 	System.out.println ("Produtos     Quantidade    Valor_Produto");
 
-	for (n=0; n < produtosVendidos.length; n++) {
+	for (int n=0; n < produtosVendidos.length; n++) {
 	System.out.println (produtosVendidos [n][0] + 
         "            " + produtosVendidos [n][2] + "             "
         + produtosVendidos [n][1]);
