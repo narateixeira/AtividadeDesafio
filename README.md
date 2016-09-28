@@ -119,11 +119,12 @@ public class Integra {
 
 		int x=0; int 
 		quantidade=0; 
+		float valorTotal=0;
 		float totalValorVendas= 0; 
 		boolean encontrou; 
 		String texto; 
 		String textoMais=null; 
-		String produtosVendidos[][]= new String[3][3]; 
+		String produtosVendidos[][]= new String[3][4]; 
 		String clienteVendas[][]= new String[3][2];
 
 		//PARA TESTAR A MATRIZ EDITE P/ TAMANHO [3],[] PORQUE ESTÁ COM 300 COMO FOI PEDIDO;
@@ -131,7 +132,7 @@ public class Integra {
 		System.out.println();
 
 		do { encontrou=false; textoMais=null; System.out.println();
-		System.out.print ("Digite o Nome do produto a vender ('FIM' para encerrar): "); texto = leia.next(); 					if(texto.equalsIgnoreCase("FIM")) { System.out.println("Encerrado com sucesso"); break; }
+		System.out.print ("Digite o Nome do produto a vender ('FIM' para encerrar): "); texto = leia.next(); 						if(texto.equalsIgnoreCase("FIM")) { System.out.println("Encerrado com sucesso"); break; }
 
 		System.out.print ("Informe a quantidade desejada: ");
 		quantidade=leia.nextInt();
@@ -145,16 +146,21 @@ public class Integra {
 
 		             if (texto.equalsIgnoreCase(produtosCodNome[x][1])) {
 		                encontrou=true;
+		                
 		                produtosVendidos[x][0]=produtosCodNome[x][1];
+		                valorTotal=produtosValor[x]*quantidade;
 		                produtosVendidos[x][1]=String.valueOf(produtosValor[x]);
 		                produtosVendidos[x][2]=String.valueOf(quantidade);
-		                break;
+		                produtosVendidos[x][3]=String.valueOf(valorTotal);
+		                break;	                
 		                } 
-		            }
-
+		         }
+		            
 		            System.out.println("Produto encontrado - "  + produtosVendidos[x][0] + " R$ " + produtosVendidos[x][1]) ;
-		            System.out.println("total a pagar: R$ " + (quantidade * produtosValor[x]));
-		            totalValorVendas= totalValorVendas + (quantidade * produtosValor[x]);
+		            System.out.println("total a pagar: R$ " + produtosVendidos[x][3]);
+		            totalValorVendas= totalValorVendas + valorTotal;
+		            
+		            
 
 		        if (encontrou=false) {System.out.println("Produto não cadastrado");
 		        System.out.println();
@@ -200,21 +206,23 @@ public class Integra {
 
 		 else { System.out.println("Conferir o(s) produto(s)");
 		 System.out.println(); //pular linha
-		 System.out.println("Produto(s)   Valor   Quantidade    Cliente");
+		 System.out.println("Produto(s)   Valor   Quantidade   Total    Cliente");
 		    for(int n=0; n < produtosVendidos.length; n++) { 
-		        System.out.println(produtosVendidos[n][0] + "       "+  produtosVendidos[n][1] + "       " + produtosVendidos[n][2] + "          "+ (clienteVendas[x][1]));}
+		        System.out.println(produtosVendidos[n][0] + "         "+  produtosVendidos[n][1] + "       " + produtosVendidos[n][2] + "        " + produtosVendidos[n][3]+ "       "+ (clienteVendas[n][1]));}
 		System.out.println();//pular linha  
 		System.out.println("Confirmar venda? SIM ou NAO: ");
 		texto=leia.next();
 		    if(texto.equalsIgnoreCase("SIM")) { System.out.println("O total do valor das vendas é R$ " + totalValorVendas);
 		    } else{ System.out.println("Venda cancelada");
+		    totalValorVendas=0;
 		    break;}
 		 }
 		} while (texto!="FIM");
 
 		if(texto.equalsIgnoreCase("nao")){ System.out.println("Finalizado com sucesso");
 
-		} else { System.out.println("o total vendido foi: " + totalValorVendas); System.out.println(); System.out.println("Finalizado com sucesso"); }	
+		} else { System.out.println("o total vendido foi: " + totalValorVendas); System.out.println(); 						System.out.println("Finalizado com sucesso"); }	
+		
 		
 //alessandro
 		
