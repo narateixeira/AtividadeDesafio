@@ -131,8 +131,12 @@ public class Integra {
 
 		System.out.println();
 
-		do { encontrou=false; textoMais=null; System.out.println();
-		System.out.print ("Digite o Nome do produto a vender ('FIM' para encerrar): "); texto = leia.next(); 						if(texto.equalsIgnoreCase("FIM")) { System.out.println("Encerrado com sucesso"); break; }
+		do { 
+			encontrou=false; 
+			textoMais=null; 
+			System.out.println();
+		System.out.print ("Digite o Nome do produto a vender ('FIM' para encerrar): "); 
+		texto = leia.next(); if(texto.equalsIgnoreCase("FIM")) { System.out.println("Encerrado com sucesso"); break; }
 
 		System.out.print ("Informe a quantidade desejada: ");
 		quantidade=leia.nextInt();
@@ -155,25 +159,22 @@ public class Integra {
 		                break;	                
 		                } 
 		         }
-		            
-		            System.out.println("Produto encontrado - "  + produtosVendidos[x][0] + " R$ " + produtosVendidos[x][1]) ;
-		            System.out.println("total a pagar: R$ " + produtosVendidos[x][3]);
-		            totalValorVendas= totalValorVendas + valorTotal;
-		            
-		            
-
-		        if (encontrou=false) {System.out.println("Produto não cadastrado");
-		        System.out.println();
-		            System.out.print("Deseja procurar outro produto? (Sim para continuar...  )");
+		           if (encontrou==false)  {          
+		           System.out.println("Produto não cadastrado");
+		           System.out.println();
+		           System.out.print("Deseja procurar outro produto? (Sim para continuar...  )");
 		            textoMais=leia.next();
 		                if(textoMais.equalsIgnoreCase("SIM")) { System.out.println(" ");
 		                } else { break; } 
-		            }
+		           } else {System.out.println("Produto encontrado - "  + produtosVendidos[x][0] + " R$ " + produtosVendidos[x][1]) ;
+			        System.out.println("total a pagar: R$ " + produtosVendidos[x][3]);
+			        totalValorVendas= totalValorVendas + valorTotal;
+		           }
 
-		        else { System.out.println();
-		            System.out.print("Deseja acrescentar produtos? (SIM ou NAO:) ");
-		            textoMais=leia.next();
-		            if(textoMais.equalsIgnoreCase("SIM")) { System.out.println(" Escolha outro produto ... ");
+		        if (encontrou==true) { System.out.println();
+		        System.out.print("Deseja acrescentar produtos? (SIM ou NAO:) ");
+		        textoMais=leia.next();
+		        if(textoMais.equalsIgnoreCase("SIM")) { System.out.println(" Escolha outro produto ... ");
 		            } else if(textoMais.equalsIgnoreCase("Nao")) { 
 		            System.out.println();
 		            System.out.println("Prosseguir com a compra ..."); 
@@ -221,7 +222,7 @@ public class Integra {
 
 		if(texto.equalsIgnoreCase("nao")){ System.out.println("Finalizado com sucesso");
 
-		} else { System.out.println("o total vendido foi: " + totalValorVendas); System.out.println(); 						System.out.println("Finalizado com sucesso"); }	
+		} else { System.out.println("o total vendido foi: " + totalValorVendas); System.out.println(); System.out.println("Finalizado com sucesso"); }	
 		
 		
 //alessandro
